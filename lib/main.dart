@@ -6,6 +6,7 @@ import 'package:ostad_flutter_assignments/ui/home_screen.dart';
 
 void main() {
   runApp(DevicePreview(
+    enabled: false,
     builder: (context) {
       return const MyApp();
     }
