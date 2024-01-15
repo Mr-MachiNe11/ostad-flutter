@@ -19,12 +19,13 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double productPrice = product.price * qty;
+    double screenWidth = MediaQuery.of(context).size.width;
 
-    // Calculate responsive sizes based on screen width
-    double imageWidth = MediaQuery.of(context).size.width * 0.3;
-    double itemHeight = MediaQuery.of(context).size.width * 0.4;
-    double fontSizeTitle = MediaQuery.of(context).size.width * 0.05;
-    double fontSizePrice = MediaQuery.of(context).size.width * 0.05;
+    double imageWidth = screenWidth * 0.3;
+    double itemHeight = screenWidth * 0.4;
+    double fontSizeTitle = screenWidth * 0.05;
+    double fontSizeSubtitle = screenWidth * 0.03;
+    double fontSizePrice = screenWidth * 0.05;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -65,27 +66,35 @@ class ProductItem extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              const Text("Color: ",style: TextStyle(fontSize: 16)),
+                              const Text(
+                                "Color: ",
+                                style: TextStyle(fontSize: 16),
+                              ),
                               Text(
                                 product.color,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontSize: fontSizeSubtitle,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               const SizedBox(
                                 width: 10,
                               ),
-                              const Text("Size: ",style: TextStyle(fontSize: 16),),
+                              const Text(
+                                "Size: ",
+                                style: TextStyle(fontSize: 16),
+                              ),
                               Text(
                                 product.size,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontSize: fontSizeSubtitle,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               )
                             ],
                           ),
                           const SizedBox(
-                            height: 40,
+                            height: 20,
                           ),
                           Row(
                             children: [
@@ -131,8 +140,8 @@ class ProductItem extends StatelessWidget {
                         children: [
                           IconButton(
                               onPressed: () {},
-                              icon: const Icon(
-                                  Icons.more_vert_outlined)),
+                              icon:
+                              const Icon(Icons.more_vert_outlined)),
                           Text(
                             '\$$productPrice',
                             style: TextStyle(
