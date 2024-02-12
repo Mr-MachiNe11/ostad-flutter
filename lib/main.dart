@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter_assignments/ui/home_screen.dart';
+import 'package:ostad_flutter_assignments/ui/weather_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +14,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(color: Colors.white),
-            centerTitle: true,
-            color: Colors.purple,
-            titleTextStyle: TextStyle(color: Colors.white, fontSize: 20)),
+          iconTheme: IconThemeData(color: Colors.white),
+          centerTitle: true,
+          color: Colors.purple,
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+        ),
       ),
-      home: const HomeScreen(),
+      home: const WeatherScreen(),
     );
   }
 }
